@@ -1,0 +1,23 @@
+# The Root Query for the application
+type Query {
+    heureCourante(id: Int): Heure
+}
+
+# The Types
+type Heure {
+    heure: Int
+    minute: Int
+    serveur : Serveur
+}
+type Serveur {
+    nom: String
+    ip: IP
+}
+type IP {
+    numero: String
+}
+
+# The Root Mutation for the application
+type Mutation {
+    writePost(heure: Int , minute: Int) : Heure
+}
